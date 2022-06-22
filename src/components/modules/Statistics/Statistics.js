@@ -4,7 +4,7 @@ import s from './Statistics.module.css';
 export const Statistics = ({ stats, title }) => {
   return (
     <section className={s.statistics}>
-      <h2 className={s.title}>{title}</h2>
+      {title && <h2 className={s.title}>{title}</h2>}
 
       <ul className={s.list}>
         {stats.map(({ id, label, percentage }) => (
@@ -19,7 +19,12 @@ export const Statistics = ({ stats, title }) => {
 };
 
 Statistics.propType = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
-  id: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
+  title: PropTypes.string.isRequired,
 };
