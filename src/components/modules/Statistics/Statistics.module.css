@@ -1,0 +1,12 @@
+.stat-list-element {
+    display: inline-block;
+    background: #900;
+    color: azure;
+    padding: 20px 15px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+
+.stat-list-element-span.left {
+    margin-left: 5px;
+}
