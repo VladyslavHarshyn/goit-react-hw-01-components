@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import s from './User.module.css';
 
 export default function Profile({
   url,
@@ -10,30 +11,29 @@ export default function Profile({
   userViews,
 }) {
   return (
-    <div className='profile'>
-      <div className='description'>
+    <div className={s.profile}>
+      <div>
         <img
           src={url}
           alt='User avatar'
-          className='avatar'
-          width='100px'
+          className={s.avatar}
         />
-        <p className='name'>{userName}</p>
-        <p className='tag'>@{userTag}</p>
-        <p className='location'>{userLocation}</p>
+        <p className={s.name}>{userName}</p>
+        <p className={s.tag}>@{userTag}</p>
+        <p className={s.location}>{userLocation}</p>
       </div>
 
-      <ul className='stats'>
-        <li>
-          <span className='label'>Followers</span>
+      <ul className={s.stats}>
+        <li className={s.element}>
+          <span className={s.label}>Followers</span>
           <span className='quantity'>{userFollowers}</span>
         </li>
-        <li>
-          <span className='label'>Views</span>
+        <li className={s.element}>
+          <span className={s.label}>Views</span>
           <span className='quantity'>{userViews}</span>
         </li>
-        <li>
-          <span className='label'>Likes</span>
+        <li className={s.element}>
+          <span className={s.label}>Likes</span>
           <span className='quantity'>{userLikes}</span>
         </li>
       </ul>
